@@ -1,7 +1,10 @@
 import paho.mqtt.client as mqtt
 
+#The function defines here are predefined functions of the paho library, which we override to make them according to our needs.
 def on_connect(client,userdata,flags,rc):
-    # if rc=0 client is sucessful with broker
+    # if rc=0 marks a successful connection of the client to the broker.rc, the result of the publishing. It could be MQTT_ERR_SUCCESS to indicate success,
+    # MQTT_ERR_NO_CONN if the client is not currently connected, or MQTT_ERR_QUEUE_SIZE when max_queued_messages_set is used to
+    # indicate that message is neither queued nor sent.
 
     if (rc==0):
         client.connected_flag=True
